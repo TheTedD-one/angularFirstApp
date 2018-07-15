@@ -6,8 +6,9 @@
 
 <hr>
 
-<input type="text" class="form-control" (input)="onKeyUp($event)">
-<p>{{ inputText }}</p>
 
 <input type="text" class="form-control" #myInp (input)="onKeyUp2(myInp.value)">
+
+<input type="text" class="form-control" [(ngModel)]="inputText">
+
 <p>{{ inputText }}</p>

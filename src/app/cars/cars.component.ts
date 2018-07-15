@@ -9,6 +9,7 @@ export class CarsComponent {
 
     addCaqrStatus = '';
     inputText = '';
+    inputText2 = '';
 
     constructor() {
 
