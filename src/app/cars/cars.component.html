@@ -1,3 +1,13 @@
+<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<p>{{ addCaqrStatus }}</p>
+<hr>
 <app-car></app-car>
 <app-car></app-car>
 
+<hr>
+
+<input type="text" class="form-control" (input)="onKeyUp($event)">
+<p>{{ inputText }}</p>
+
+<input type="text" class="form-control" #myInp (input)="onKeyUp2(myInp.value)">
+<p>{{ inputText }}</p>
