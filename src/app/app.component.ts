@@ -4,10 +4,22 @@ import {Component} from '@angular/core';
     selector: 'app-root',
     template: `
         <div class="col-xs-8 col-xs-offset-2">
-            <h2>{{ num | appPow:3:'=' }}</h2>
+            <input class="form-control" type="text" [(ngModel)]="searchCar">
+            <hr>
+            <ul class="list-group">
+                <li *ngFor="let item of items | carFilter:searchCar; let idx = index" class="list-group-item"><b>{{ idx + 1 }}</b> - {{ item.name }}</li>
+            </ul>
         </div>
     `
 })
 export class AppComponent {
-    num = 2;
+    searchCar = '';
+    items = [
+        {name: 'Ford'},
+        {name: 'Mazda'},
+        {name: 'Bently'},
+        {name: 'Audi'},
+        {name: 'BMW'},
+        {name: 'Mercedes'},
+    ];
 }
