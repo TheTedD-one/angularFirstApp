@@ -1,13 +1,14 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
     selector: 'app-cars',
     templateUrl: './cars.component.html',
-    styleUrls: ['./cars.component.css']
+    styleUrls: ['./cars.component.css'],
+    encapsulation: ViewEncapsulation.None,
 })
 
 export class CarsComponent {
-    cars: [{name: string, year: number}] = [
+    cars = [
         {
             name: "Ford",
             year: 2005,
