@@ -5,6 +5,17 @@ import {Component, OnInit} from '@angular/core';
     templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
+    answers = [
+        {
+            type: 'yes',
+            text: 'Да'
+        },
+        {
+            type: 'no',
+            text: 'Нет'
+        }
+    ];
+
     ngOnInit() {
 
     }
