@@ -12,9 +12,10 @@ interface Cars {
     selector: 'app-root',
     templateUrl: './app.component.html',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     carName: string = '';
     cars: Cars[] = [];
+    appTitile;
     colors = [
         'red',
         'blue',
@@ -51,5 +52,9 @@ export class AppComponent {
         this.carsService.deleteCar(car).subscribe((data) => {
             this.cars = this.cars.filter(c => c.id !== car.id);
         });
+    }
+
+    ngOnInit(): void {
+        this.appTitile = this.carsService.getAppTitle();
     }
 }

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Headers, Http} from '@angular/http';
-import {map} from 'rxjs/internal/operators';
+import {delay, map} from 'rxjs/internal/operators';
 
 @Injectable()
 
@@ -26,5 +26,13 @@ export class CarsService {
     deleteCar(car: any) {
         return this.http.delete(`http://localhost:3000/cars/${car.id}`)
             .pipe(map((response: Response) => response.json()));
+    }
+
+    getAppTitle() {
+        return this.http.get('http://localhost:3000/title')
+            .pipe(map((response: Response) => response.json()),
+                map((data) => data.value),
+                delay(3000)
+            );
     }
 }
