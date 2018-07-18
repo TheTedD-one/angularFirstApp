@@ -4,12 +4,6 @@ import {NgForm} from '@angular/forms';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styles: [`
-        input.ng-invalid.ng-touched {
-            border-color: red;
-        }
-    `]
-
 })
 export class AppComponent implements OnInit {
     answers = [
