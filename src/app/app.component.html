@@ -14,6 +14,7 @@
                   #email="ngModel"
           >
           <p *ngIf="email.invalid && email.touched">Введите корректный email</p>
+          <button class="btn btn-primary" type="button" (click)="addRandEmail()">Добавить случайный email</button>
         </div>
         <div class="form-group">
           <label>Пароль</label>
@@ -57,5 +58,13 @@
       >Сохранить
       </button>
     </form>
+
+    <div class="row">
+      <div *ngIf="isSubmited">
+        <pre>
+          {{ formData | json }}
+        </pre>
+      </div>
+    </div>
   </div>
 </div>
