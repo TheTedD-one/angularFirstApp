@@ -1,8 +1,9 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "narims": [
-    {"isYani": true}
-  ]
+    "cars": [
+      {
+        "name": "Ford",
+        "color": "White",
+        "id": 1
+      }
+    ]
 }
