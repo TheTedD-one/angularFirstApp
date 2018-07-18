@@ -6,6 +6,8 @@ import {NgForm} from '@angular/forms';
     templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
+    defaultAnswer = 'no';
+    defaultCountry = 'ru';
     answers = [
         {
             type: 'yes',
@@ -16,6 +18,8 @@ export class AppComponent implements OnInit {
             text: 'Нет'
         }
     ];
+
+
 
     ngOnInit() {
 
