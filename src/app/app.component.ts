@@ -7,6 +7,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class AppComponent implements OnInit {
     form: FormGroup;
+    charsCount = 4;
     answers = [
         {
             type: 'yes',
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit {
         this.form = new FormGroup({
             user: new FormGroup({
                 email: new FormControl('', [Validators.required, Validators.email]),
-                pass: new FormControl('', Validators.required),
+                pass: new FormControl('', [Validators.required, this.checkForLength.bind(this)]),
             }),
             country: new FormControl('ru'),
             answer: new FormControl('no'),
@@ -33,4 +34,10 @@ export class AppComponent implements OnInit {
         console.log(this.form);
     }
 
+    checkForLength(control: FormControl) {
+        if (control.value.length <= this.charsCount) {
+            return {'lengthError': true};
+        }
+        return null;
+    }
 }
