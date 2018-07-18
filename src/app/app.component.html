@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
-      <!--<input type="text" class="form-control" [(ngModel)]="carName">-->
       <input type="text" class="form-control" [(ngModel)]="carName">
       <hr>
       <button class="btn btn-primary" (click)="loadCars()">Загрузить машину</button>
@@ -9,7 +8,16 @@
       <hr>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let car of cars">
-          <span class="badge">{{ car.id }}</span> {{ car.color }} {{ car.name }}
+          <span
+                  class="badge"
+                  [ngStyle]="{background: car.color}"
+          >
+            {{ car.id }}
+          </span>
+          {{ car.color }}
+          {{ car.name }}
+          <button class="btn btn-xs btn-info" (click)="setNewColor(car)">Изменить цвет</button>
+          <button class="btn btn-xs btn-danger" (click)="deleteCar(car)">Удалить машину</button>
         </li>
       </ul>
     </div>
