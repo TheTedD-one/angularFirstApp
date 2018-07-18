@@ -1,4 +1,10 @@
+import {ConsoleService} from './console.service';
+import {Injectable} from '@angular/core';
+
+@Injectable()
+
 export class CarsService {
+    constructor(private consoleService: ConsoleService) {}
     cars = [
         {
             name: 'Ford',
@@ -19,5 +25,6 @@ export class CarsService {
             name,
             isSold: false
         });
+        this.consoleService.log('Машина ' + name + ' добавлена!');
     }
 }
