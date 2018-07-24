@@ -7,25 +7,25 @@ export class CarsService {
       name: 'Ford',
       id: 1,
       year: 2017,
-      color: 'red',
+      color: 'red'
     },
     {
       name: 'Audi',
       id: 2,
       year: 2010,
-      color: 'blue',
+      color: 'blue'
     },
     {
       name: 'BMW',
       id: 3,
       year: 2005,
-      color: 'yellow',
+      color: 'yellow'
     },
     {
       name: 'Mercedes',
       id: 4,
       year: 2000,
-      color: 'gray',
+      color: 'grey'
     }
-  ];
+  ]
 }
