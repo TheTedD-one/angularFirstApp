@@ -2,4 +2,12 @@
 
 <hr>
 
-<div *ngIf="isVisible" [@divTrigger]="isVisible ? 'show' : 'hide'" class="alert alert-danger">Lorem ipsum dolor sit amet.</div>
+<div
+        *ngIf="isVisible"
+        [@divTrigger]="isVisible ? 'show' : 'hide'"
+        (@divTrigger.start)="onAnimStart($event)"
+        (@divTrigger.done)="onAnimDone($event)"
+        class="alert alert-danger"
+>
+    Lorem ipsum dolor sit amet.
+</div>
