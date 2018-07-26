@@ -1,2 +1,3 @@
-<!--<div [@clickDiv]="clickedDivState" (click)="changeDivState()" (mousedown)="clickedDivState='active'"></div>-->
-<div [@multi]="multistate" (click)="multistate = multistate === 'start' ? 'end' : 'start'"></div>
+<button class="btn btn-primary" (click)="isVisible = !isVisible">Переключить</button>
+<hr>
+<div *ngIf="isVisible" [@divTrigger]="isVisible ? 'show' : 'hide'" class="alert alert-danger">Lorem ipsum dolor sit amet.</div>
