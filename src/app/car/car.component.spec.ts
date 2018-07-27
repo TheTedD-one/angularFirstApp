@@ -30,4 +30,26 @@ describe('CarComponent', () => {
     fixture.detectChanges();
     expect(component.isCarVisible).toEqual(carService.getVisible());
   });
+
+  it('shoold display car if is visible', () => {
+    const fixture = TestBed.createComponent(CarComponent);
+    const component = fixture.debugElement.componentInstance;
+    const carService = fixture.debugElement.injector.get(CarService);
+    carService.showCar();
+    fixture.detectChanges();
+    const nativeEl = fixture.debugElement.nativeElement;
+    const text = nativeEl.querySelector('span').textContent;
+    expect(text).toEqual('Car is visible');
+  });
+
+  it('shooldn\'t display car if is visible', () => {
+    const fixture = TestBed.createComponent(CarComponent);
+    const component = fixture.debugElement.componentInstance;
+    const carService = fixture.debugElement.injector.get(CarService);
+    carService.hideCar();
+    fixture.detectChanges();
+    const nativeEl = fixture.debugElement.nativeElement;
+    const text = nativeEl.querySelector('span').textContent;
+    expect(text).not.toEqual('Car is visible');
+  });
 });
